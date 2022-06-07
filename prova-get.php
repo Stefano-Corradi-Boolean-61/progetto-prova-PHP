@@ -55,6 +55,8 @@ $salutiamo = "Ciao ";
 $salutiamo .= $nome_cognome;
 
 
+
+
 // dopo genero l'utput HTML
 ?>
 
