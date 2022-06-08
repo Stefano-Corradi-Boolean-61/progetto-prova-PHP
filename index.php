@@ -122,6 +122,25 @@ $randArr = getUniqueRandom(5,1,10);
 
 var_dump($randArr);
 
+
+// ciclo colori con foreach
+foreach($colori as $colore){
+  echo "<br>$colore";
+}
+
+echo "<hr>";
+
+foreach($user as $chiave => $valore){
+  echo "<br>$chiave: $valore";
+}
+
+	
+$animals = [
+  "mammals" => ["cow", "pig", "horse", "dog"],
+  "birds" => ["duck", "chicken"]
+];
+
+
 ?>
 
 
@@ -163,6 +182,42 @@ var_dump($randArr);
     ?>
   </ul>
 
+  <h2>Colori</h2>
+  <ul>
+    <?php foreach($colori as $colore): ?>
+      <li><?php echo $colore ?></li>
+    <?php endforeach; ?>
+  </ul>
 
+  <h2>Animali</h2>
+    <ul>
+      <?php foreach($animals as $specie => $razze): ?>
+        <!-- la chiave ($specie) mi serve come titolo per il secondo ciclo -->
+        <li>
+          <?php echo $specie ?>
+          <ul>
+            <?php foreach($razze as $razza): ?>
+              <!-- qui la chiave non mi serve e stampo direttamente il valore -->
+              <li><?php echo $razza ?></li>
+            <?php endforeach; ?>
+          </ul>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+
+    <h2>Users</h2>
+    <ul>
+      <?php foreach($users as $user): ?>
+        <!-- essendo come un array di oggetti non mi servono le chiavi ma direttamente i valori -->
+        <li>
+          <ul>
+          <?php foreach($user as $k => $v): ?>
+            <!-- ad ogni singolo array associativo ciclato mi occorre sia la chiave che il valore -->
+            <li><?php echo "$k: $v" ?></li>
+          <?php endforeach; ?>
+          </ul>
+        </li>
+      <?php endforeach; ?>
+    </ul>
 </body>
 </html>
